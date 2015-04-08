@@ -11,7 +11,7 @@ class ExternalCssPlugin implements \Swift_Events_SendListener
     public function beforeSendPerformed(\Swift_Events_SendEvent $evt)
     {
         $message = $evt->getMessage();
-        $message->setBody($external->includeExternalStylesheets($message->getBody()), 'text/html');
+        $message->setBody($this->includeExternalStylesheets($message->getBody()), 'text/html');
     }
 
     /**
